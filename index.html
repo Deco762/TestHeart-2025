@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Trái tim trên canvas (full màn hình) -->
+  <canvas id="pinkboard"></canvas>
+
+  <!-- Tên/Caption ở giữa (nếu muốn hiện) -->
+  <div class="text"><p>Đức ❤️ Lê </p></div>
+
+  <!-- Vòng chữ chạy tròn ở dưới -->
+ <!-- Vòng chữ chạy tròn ở dưới -->
+<div class="circular-text" aria-hidden="true">
+  <svg viewBox="0 0 200 200" width="200" height="200">
+    <!-- Đường tròn để bám chữ (gán pathLength để tính đều 1 vòng) -->
+    <defs>
+      <path id="circlePath" d="M100,100 m-80,0 a80,80 0 1,1 160,0 a80,80 0 1,1 -160,0" pathLength="1000"/>
+    </defs>
+
+    <!-- Nhóm xoay (quay tròn chữ) -->
+    <g class="spin">
+      <text>
+        <!-- lengthAdjust="spacing" + textLength="1000" => chữ lấp kín vòng -->
+        <textPath href="#circlePath" startOffset="0%" lengthAdjust="spacingAndGlyphs" textLength="500">
+          🏮 CHÚC EM CÓ 1 MÙA TRUNG THU VUI VẺ 🏮 🏮CHÚC EM CÓ 1 MÙA TRUNG THU VUI VẺ 🏮
+        </textPath>
+      </text>
+    </g>
+  </svg>
+</div>
+
+<!-- Thêm vào <body> (ví dụ chèn trước thẻ <script src="js.js"></script>) -->
+<!-- <audio id="bg-music" src="music.mp3" loop preload="auto"></audio> -->
+
+<!-- Nút play nhỏ để làm fallback nếu autoplay bị chặn -->
+<!-- <button id="music-play-btn" aria-label="Bật nhạc nền" title="Bật nhạc" style="display:none;">
+  🔊
+</button> -->
+
+  <!-- ... phần hiện có của index.html ... -->
+  <!-- Thêm audio player (muted để được phép autoplay trên nhiều trình duyệt) -->
+  <!-- <audio id="bg-music" preload="auto" loop playsinline>
+    <source src="music.mp3" type="audio/mpeg">
+     
+    Trình duyệt của bạn không hỗ trợ tag audio.
+  </audio> -->
+
+<!-- SoundCloud embed -->
+<div id="soundcloud-player">
+  <iframe 
+    width="0" 
+    height="0" 
+    scrolling="no" 
+    frameborder="no" 
+    allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/obito-mad-sound/ngoai-le-cua-nhau-3&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&visual=false">
+  </iframe>
+</div>
+
+  
+  <!-- Overlay nhỏ hiển thị khi cần người dùng bấm để bật tiếng -->
+  <div id="unmute-overlay" aria-hidden="true">
+    <button id="unmute-btn">🔊 Nhấn để bật nhạc</button>
+    <p class="hint">Hoặc chạm màn hình bất kỳ để bật tiếng</p>
+  </div>
+
+  <script src="js.js"></script>
+</body>
+
+
+<!-- Cảnh Trung Thu hai bên trái tim -->
+<div id="mid-autumn-scene" aria-hidden="true">
+  <!-- Lồng đèn treo trái -->
+  <div class="lantern swing left">
+    <div class="cap"></div>
+    <div class="body">
+      <div class="shine"></div>
+    </div>
+    <div class="tassel"></div>
+  </div>
+
+  <!-- Lồng đèn treo phải -->
+  <div class="lantern swing right">
+    <div class="cap"></div>
+    <div class="body">
+      <div class="shine"></div>
+    </div>
+    <div class="tassel"></div>
+  </div>
+
+  <!-- Khay để thả lồng đèn trời (được JS tạo động) -->
+  <div id="sky-lanterns"></div>
+</div>
+
+
+
+  <script src="js.js"></script>
+</body>
+</html>
