@@ -379,7 +379,7 @@ var ParticlePool = (function() {
   const playerContainer = document.getElementById('soundcloud-player');
 
   // Link SoundCloud gốc
-  const soundCloudURL = 'https://soundcloud.com/obito-mad-sound/ngoai-le-cua-nhau-3';
+  const soundCloudURL = 'https://soundcloud.com/obito-mad-sound/ngoai-le-cua-nhau-3?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing://soundcloud.com/trngannn/khong-thoi-gian?utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing';
 
   // Hàm tạo iframe embed
   function createSoundCloudIframe(url, autoPlay) {

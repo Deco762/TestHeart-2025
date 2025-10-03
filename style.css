@@ -77,28 +77,27 @@ html, body {
 #unmute-overlay {
   position: fixed;
   inset: 0;
-  display: none; /* show khi cần */
+  display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 12px;
+  background: rgba(0,0,0,0.5);
   z-index: 9999;
-  pointer-events: auto;
-  background: rgba(0,0,0,0.35);
 }
-#unmute-overlay #unmute-btn {
-  background: rgba(255,255,255,0.95);
-  border: none;
-  padding: 12px 18px;
-  border-radius: 10px;
+#unmute-overlay button {
+  padding: 14px 20px;
   font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background: #fff;
   cursor: pointer;
 }
 #unmute-overlay .hint {
   color: #fff;
+  margin-top: 8px;
   font-size: 14px;
-  opacity: 0.9;
 }
+
 
 
 /* ====== Cảnh Trung Thu hai bên ====== */
